@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>FITNESS</h1>
+        </div>
+        <button class="profile-btn">
+            <span class="profile-icon">👤</span>
+        </button>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="active-section">
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">🏃</div>
+                    <div class="stat-value">8,059</div>
+                    <div class="stat-label">STEPS</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-value">3,115</div>
+                    <div class="stat-label">KCAL</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-value">123</div>
+                    <div class="stat-label">BPM</div>
+                </div>
+            </div>
+
+            <!-- Calories Chart -->
+            <div class="calories-section">
+                <div class="section-header">
+                    <h3>CALORIES</h3>
+                    <div class="weekly-average">
+                        WEEKLY AVERAGE
+                        <span class="value">102 CAL</span>
+                    </div>
+                </div>
+                <div class="calories-chart">
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 40%"><span>SUN</span></div>
+                        <div class="chart-bar" style="height: 60%"><span>MON</span></div>
+                        <div class="chart-bar active" style="height: 90%"><span>TUE</span></div>
+                        <div class="chart-bar" style="height: 45%"><span>WED</span></div>
+                        <div class="chart-bar" style="height: 55%"><span>THU</span></div>
+                        <div class="chart-bar" style="height: 70%"><span>FRI</span></div>
+                        <div class="chart-bar" style="height: 35%"><span>SAT</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Plan -->
+            <div class="plan-section">
+                <div class="section-header">
+                    <h3>PERSONALIZED PLAN</h3>
+                    <a href="#" class="view-all">VIEW ALL</a>
+                </div>
+                <div class="workout-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800" alt="Chest Workout">
+                    <div class="workout-info">
+                        <h4>CHEST<br>WORKOUT</h4>
+                        <p>6-8 MIN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav class="bottom-nav">
+                <a href="#home" class="active"><span class="nav-icon">⬚</span></a>
+                <a href="#timer"><span class="nav-icon">⏱</span></a>
+                <a href="#nutrition"><span class="nav-icon">📊</span></a>
+                <a href="#settings"><span class="nav-icon">⚙</span></a>
+            </nav>
+        </section>
+
+        <section id="workouts">
+            <h2>WEIGHT LIFTING</h2>
+            <div class="timer-section">
+                <div class="timer-display">12:56</div>
+                <div class="timer-controls">
+                    <button class="timer-btn">TIME</button>
+                    <button class="pause-btn">II</button>
+                    <button class="timer-btn">MUSCLES</button>
+                </div>
+            </div>
+            
+            <div class="workout-grid">
+                <!-- Workout cards will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="nutrition">
+            <h2>NUTRITION TRACKER</h2>
+            <div class="nutrition-overview">
+                <div class="macro-chart">
+                    <canvas id="macro-chart"></canvas>
+                </div>
+                <div class="daily-goals">
+                    <h3>DAILY GOALS</h3>
+                    <div class="goal-progress">
+                        <!-- Goal progress bars will be added via JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <div class="section-header">
+                    <h3>TODAY'S MEALS</h3>
+                    <button class="add-meal-btn">+ Add Meal</button>
+                </div>
+                <div class="meal-grid">
+                    <!-- Meal cards will be added dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="progress">
+            <h2>PROGRESS TRACKING</h2>
+            <div class="progress-overview">
+                <div class="chart-container">
+                    <h3>WEIGHT PROGRESS</h3>
+                    <canvas id="weight-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>WORKOUT FREQUENCY</h3>
+                    <canvas id="workout-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="progress-form">
+                <h3>ADD PROGRESS ENTRY</h3>
+                <form id="progress-form">
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Save Progress</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Fitness Tracker. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html> 
